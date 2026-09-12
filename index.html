@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sayan Manna — Video Editor, Motion Designer and VFX Artist." />
+  <title>Sayan Manna — Video Editor & Motion Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="grain"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home" aria-label="Sayan Manna home">
+      <span class="brand-mark">SM</span>
+      <span class="brand-name">SAYAN MANNA</span>
+    </a>
+
+    <nav class="nav-links">
+      <a class="active" href="#home">HOME</a>
+      <a href="#work">WORK</a>
+      <a href="#services">SERVICES</a>
+      <a href="#showreel">SHOWREEL</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <a class="nav-cta" href="#contact">LET'S CREATE <span>↗</span></a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-bg">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="bridge-lines"></div>
+        <div class="sun"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">VIDEO EDITOR <i>&</i> MOTION DESIGN</p>
+        <h1><span>SAYAN</span><strong>MANNA</strong></h1>
+        <p class="tagline">TURNING IDEAS INTO VISUAL STORIES</p>
+        <div class="gold-line"></div>
+        <p class="intro">
+          Creative video editor, motion designer, and VFX artist based in Kolkata.
+          I craft cinematic visuals that bring your vision to life.
+        </p>
+        <a class="button" href="#work">VIEW MY WORK <span>→</span></a>
+      </div>
+
+      <div class="hero-person">
+        <div class="halo"></div>
+        <img src="assets/profile.jpg" alt="Sayan Manna" />
+        <div class="vfx-ring"></div>
+        <div class="location">
+          <span>⌖</span>
+          <div>KOLKATA, INDIA<br><small>HOWRAH BRIDGE</small></div>
+        </div>
+      </div>
+
+      <div class="scroll-cue"><span>SCROLL</span><i></i></div>
+    </section>
+
+    <section class="work section" id="work">
+      <div class="section-head">
+        <span class="number">02</span>
+        <span class="dash"></span>
+        <h2>SELECTED WORK</h2>
+        <span class="head-note">Some of my best works.</span>
+      </div>
+
+      <div class="work-grid">
+        <article class="project project-large">
+          <div class="project-image project-one">
+            <span class="project-overlay">01</span>
+          </div>
+          <div class="project-meta"><b>THE JOURNEY</b><span>EDIT / VFX / COLOR</span></div>
+        </article>
+
+        <article class="project">
+          <div class="project-image project-two">
+            <span class="project-overlay">02</span>
+          </div>
+          <div class="project-meta"><b>THE SILENCE</b><span>EDIT / MOTION GRAPHICS</span></div>
+        </article>
+
+        <article class="project">
+          <div class="project-image project-three">
+            <span class="project-overlay">03</span>
+          </div>
+          <div class="project-meta"><b>ANOTHER REALITY</b><span>VFX / COMPOSITING</span></div>
+        </article>
+
+        <article class="project">
+          <div class="project-image project-four">
+            <span class="project-overlay">04</span>
+          </div>
+          <div class="project-meta"><b>REFLECTIONS</b><span>EDIT / COLOR</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="section-head">
+        <span class="number">03</span><span class="dash"></span><h2>SERVICES</h2>
+        <span class="head-note">What I do.</span>
+      </div>
+
+      <div class="service-grid">
+        <article><div class="icon">▱</div><h3>VIDEO EDITING</h3><p>Clean cuts, smooth flow and story-driven edits.</p></article>
+        <article><div class="icon">✦</div><h3>MOTION GRAPHICS</h3><p>Ideas brought to life with purposeful movement.</p></article>
+        <article><div class="icon">⬡</div><h3>VFX / COMPOSITING</h3><p>Real or unreal — I make it believable.</p></article>
+        <article><div class="icon">◯</div><h3>COLOR GRADING</h3><p>Mood, tone and emotion in every frame.</p></article>
+      </div>
+    </section>
+
+    <section class="showreel section" id="showreel">
+      <div class="showreel-bg"></div>
+      <div class="showreel-content">
+        <div class="section-head compact"><span class="number">04</span><span class="dash"></span><h2>SHOWREEL</h2></div>
+        <p class="reel-title">WATCH<br>MY REEL</p>
+        <p>A glimpse of my creative process and visual storytelling style.</p>
+        <button class="play-btn" id="playReel" aria-label="Play showreel">▶</button>
+        <span class="play-label">PLAY SHOWREEL</span>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-photo"><img src="assets/profile.jpg" alt="Sayan Manna portrait"></div>
+      <div class="about-copy">
+        <div class="section-head compact"><span class="number">05</span><span class="dash"></span><h2>ABOUT</h2></div>
+        <p class="hi">HI, I'M</p>
+        <h2>SAYAN MANNA</h2>
+        <p>
+          I'm a video editor and visual storyteller passionate about turning ideas
+          into cinematic visuals. My focus is editing, motion graphics, VFX,
+          compositing and color — creating work that feels real, emotional and impactful.
+        </p>
+
+        <div class="skills">
+          <span>AFTER EFFECTS</span><span>PREMIERE PRO</span><span>PHOTOSHOP</span>
+          <span>NUKE</span><span>SILHOUETTE</span><span>ILLUSTRATOR</span>
+        </div>
+      </div>
+      <aside class="about-side">
+        <p><b>FOUNDER</b><br>SAYAN MANNA</p>
+        <p><b>LOCATION</b><br>KOLKATA, INDIA</p>
+        <div class="signature">Sayan Manna</div>
+      </aside>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="section-head compact"><span class="number">06</span><span class="dash"></span><h2>CONTACT</h2></div>
+      <div class="contact-row">
+        <div>
+          <p class="contact-title">LET'S WORK<br>TOGETHER.</p>
+          <p class="muted">Have a project in mind? Let's create something worth watching.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:YOUR_EMAIL@gmail.com"><small>EMAIL</small>YOUR_EMAIL@gmail.com</a>
+          <a href="https://wa.me/YOUR_NUMBER"><small>WHATSAPP</small>YOUR WHATSAPP</a>
+          <a href="#"><small>INSTAGRAM</small>@YOUR_HANDLE</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>SM © 2026</span>
+    <span>KOLKATA BASED</span>
+    <span>YOUR VISION / MY EDITING / OUR STORY</span>
+  </footer>
+
+  <div class="modal" id="reelModal">
+    <div class="modal-inner">
+      <button id="closeModal">×</button>
+      <div class="video-placeholder">
+        <span>YOUR SHOWREEL VIDEO</span>
+        <small>Replace this block with your MP4 or YouTube/Vimeo embed.</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
