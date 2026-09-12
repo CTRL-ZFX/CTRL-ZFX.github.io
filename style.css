@@ -18,3 +18,23 @@
 .drive-note{max-width:1200px;margin:35px auto 0;padding:20px;border:1px solid rgba(190,150,60,.25);color:#aaa;font-size:13px;line-height:1.7}
 .back-link{display:inline-block;margin-top:32px;color:#c8a65b;text-decoration:none;font-size:12px;letter-spacing:.15em}
 @media(max-width:800px){.category-grid,.project-list{grid-template-columns:1fr}.page-shell{padding-top:110px}}
+
+/* Direct contact links */
+.contact-direct-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border:1px solid rgba(212,175,55,.55);
+  border-radius:4px;
+  color:inherit;
+  text-decoration:none;
+  letter-spacing:.08em;
+  font-size:.78rem;
+  transition:transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.contact-direct-links a:hover{
+  transform:translateY(-2px);
+  background:rgba(212,175,55,.08);
+  border-color:rgba(212,175,55,.9);
+}
