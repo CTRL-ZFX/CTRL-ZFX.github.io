@@ -16,3 +16,12 @@ const revealTargets=[...document.querySelectorAll('.section-head,.project,.servi
 revealTargets.forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--reveal-delay',`${Math.min(i*35,280)}ms`)});
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');revealObserver.unobserve(e.target)}}),{threshold:.12});
 revealTargets.forEach(el=>revealObserver.observe(el));
+
+// Interactive service cards: reveal the matching service description on click.
+document.querySelectorAll('.service-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const wasOpen=card.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.service-card').forEach(c=>c.setAttribute('aria-expanded','false'));
+    card.setAttribute('aria-expanded',String(!wasOpen));
+  });
+});
