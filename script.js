@@ -35,7 +35,7 @@ document.querySelectorAll('.service-card').forEach(card=>{
   const key='ctrlZfxSoundEnabled';
   const saved=localStorage.getItem(key);
   let enabled=saved==='true';
-  music.volume=0.075; click.volume=0.22; soft.volume=0.16;
+  music.volume=0.5; click.volume=0.22; soft.volume=0.16;
   const update=()=>{toggle.classList.toggle('is-on',enabled);toggle.setAttribute('aria-pressed',String(enabled));toggle.setAttribute('aria-label',enabled?'Turn sound off':'Turn sound on');toggle.querySelector('.sound-text').textContent=enabled?'SOUND ON':'SOUND OFF';toggle.querySelector('.sound-icon').textContent=enabled?'♫':'♪'};
   const start=()=>{if(enabled)music.play().catch(()=>{})};
   update();
