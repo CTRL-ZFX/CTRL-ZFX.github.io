@@ -38,3 +38,5 @@
   background:rgba(212,175,55,.08);
   border-color:rgba(212,175,55,.9);
 }
+
+.services-counter{text-align:center;margin-top:40px;padding:28px 20px;border-top:1px solid rgba(212,175,55,.22);border-bottom:1px solid rgba(212,175,55,.22)}.counter-number{font-size:clamp(2.6rem,6vw,5rem);line-height:1;font-weight:700}.counter-label{margin-top:10px;font-size:.72rem;letter-spacing:.22em;opacity:.72}

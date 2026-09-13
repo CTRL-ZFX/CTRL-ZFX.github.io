@@ -8,3 +8,5 @@ menu?.addEventListener('click',()=>{nav.classList.toggle('mobile-open');});
 links.forEach(a=>a.addEventListener('click',()=>nav.classList.remove('mobile-open')));
 const glow=document.querySelector('.cursor-glow');
 window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+
+(() => {const el=document.querySelector('.counter-number');if(!el)return;const start=95,weekly=2,key='ctrlZfxWorkCounterStart',now=Date.now();let first=Number(localStorage.getItem(key));if(!first||first>now){first=now;localStorage.setItem(key,String(first));}const target=start+Math.floor((now-first)/(7*24*60*60*1000))*weekly;const begin=performance.now();const run=t=>{const q=Math.min(1,(t-begin)/1300),e=1-Math.pow(1-q,3);el.textContent=Math.round(target*e)+'+';if(q<1)requestAnimationFrame(run)};new IntersectionObserver((x,o)=>{if(x.some(e=>e.isIntersecting)){requestAnimationFrame(run);o.disconnect()}},{threshold:.25}).observe(el)})();
