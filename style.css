@@ -70,3 +70,7 @@
 
 @media(max-width:1100px){.services-grid{grid-template-columns:repeat(3,1fr)}.service-card:nth-child(3){border-right:0}.service-card:nth-child(4),.service-card:nth-child(5){border-top:1px solid #252525}}
 @media(max-width:700px){.services-grid{grid-template-columns:1fr 1fr}.service-card{min-height:210px;padding:22px 17px}.service-card:nth-child(2n){border-right:0}.service-card:nth-child(3),.service-card:nth-child(4),.service-card:nth-child(5){border-top:1px solid #252525}.icon{margin:22px 0 15px;font-size:31px}.services h3{font-size:11px}.service-detail{font-size:9px}}
+
+/* Ambient website sound controls */
+.sound-toggle{position:fixed;right:22px;bottom:22px;z-index:80;border:1px solid rgba(212,175,55,.38);background:rgba(8,8,8,.72);backdrop-filter:blur(12px);color:#eee;padding:10px 13px;border-radius:999px;font:600 10px/1 Inter,sans-serif;letter-spacing:.16em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:.25s ease}.sound-toggle:hover{border-color:rgba(212,175,55,.75);transform:translateY(-2px)}.sound-icon{font-size:15px;line-height:1}.sound-toggle.is-on{box-shadow:0 0 24px rgba(212,175,55,.12);border-color:rgba(212,175,55,.7)}
+@media(max-width:600px){.sound-toggle{right:14px;bottom:14px;padding:9px 11px}.sound-text{font-size:9px}}

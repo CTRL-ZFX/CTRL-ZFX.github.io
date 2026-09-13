@@ -9,8 +9,6 @@ links.forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('mobile-op
 const glow=document.querySelector('.cursor-glow');
 window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
 
-(() => {const el=document.querySelector('.counter-number');if(!el)return;const start=95,weekly=2,key='ctrlZfxWorkCounterStart',now=Date.now();let first=Number(localStorage.getItem(key));if(!first||first>now){first=now;localStorage.setItem(key,String(first));}const target=start+Math.floor((now-first)/(7*24*60*60*1000))*weekly;const begin=performance.now();const run=t=>{const q=Math.min(1,(t-begin)/1300),e=1-Math.pow(1-q,3);el.textContent=Math.round(target*e)+'+';if(q<1)requestAnimationFrame(run)};new IntersectionObserver((x,o)=>{if(x.some(e=>e.isIntersecting)){requestAnimationFrame(run);o.disconnect()}},{threshold:.25}).observe(el)})();
-
 // Reveal sections smoothly as they enter the viewport.
 const revealTargets=[...document.querySelectorAll('.section-head,.project,.services-grid>div,.about-copy,.about-photo,.contact-grid')];
 revealTargets.forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--reveal-delay',`${Math.min(i*35,280)}ms`)});
@@ -25,3 +23,29 @@ document.querySelectorAll('.service-card').forEach(card=>{
     card.setAttribute('aria-expanded',String(!wasOpen));
   });
 });
+
+
+// Ambient music + UI click sounds. Browsers may block autoplay until the visitor interacts once.
+(() => {
+  const music=document.getElementById('bgMusic');
+  const click=document.getElementById('uiClick');
+  const soft=document.getElementById('uiSoftClick');
+  const toggle=document.getElementById('soundToggle');
+  if(!music||!click||!soft||!toggle)return;
+  const key='ctrlZfxSoundEnabled';
+  const saved=localStorage.getItem(key);
+  let enabled=saved==='true';
+  music.volume=0.075; click.volume=0.22; soft.volume=0.16;
+  const update=()=>{toggle.classList.toggle('is-on',enabled);toggle.setAttribute('aria-pressed',String(enabled));toggle.setAttribute('aria-label',enabled?'Turn sound off':'Turn sound on');toggle.querySelector('.sound-text').textContent=enabled?'SOUND ON':'SOUND OFF';toggle.querySelector('.sound-icon').textContent=enabled?'♫':'♪'};
+  const start=()=>{if(enabled)music.play().catch(()=>{})};
+  update();
+  if(enabled)start();
+  const unlock=()=>{if(!enabled)return;start();window.removeEventListener('pointerdown',unlock);window.removeEventListener('keydown',unlock)};
+  window.addEventListener('pointerdown',unlock,{once:true}); window.addEventListener('keydown',unlock,{once:true});
+  toggle.addEventListener('click',()=>{enabled=!enabled;localStorage.setItem(key,String(enabled));update();if(enabled){music.play().catch(()=>{})}else{music.pause();music.currentTime=0}});
+  const interactive='a,button,.project,.category-card,.service-card';
+  document.querySelectorAll(interactive).forEach(el=>el.addEventListener('click',()=>{
+    if(el===toggle)return;
+    if(enabled){const isNav=el.matches('a');const snd=isNav?soft:click;snd.currentTime=0;snd.play().catch(()=>{})}
+  }));
+})();
