@@ -69,3 +69,40 @@ document.querySelectorAll('.service-card').forEach(card=>{
     setTimeout(type,delay);
   });
 })();
+
+// V26 cinematic scrolling, section activation and lightweight parallax.
+(() => {
+  const loader=document.getElementById('pageLoader');
+  const nav=document.querySelector('.nav');
+  const sections=[...document.querySelectorAll('main section')];
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finish=()=>loader?.classList.add('hide');
+  if(document.readyState==='complete') setTimeout(finish,180); else window.addEventListener('load',()=>setTimeout(finish,180),{once:true});
+
+  const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('in-view');
+  }),{threshold:.18});
+  sections.forEach(s=>sectionObserver.observe(s));
+
+  let ticking=false;
+  const onScroll=()=>{
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(()=>{
+      nav?.classList.toggle('scrolled',window.scrollY>30);
+      if(!reduce && window.innerWidth>760){
+        const y=window.scrollY;
+        const hero=document.querySelector('.hero');
+        const copy=document.querySelector('.hero-copy');
+        const person=document.querySelector('.hero-person-wrap');
+        if(hero && y < hero.offsetHeight){
+          const p=Math.min(y/hero.offsetHeight,1);
+          if(copy)copy.style.transform=`translate3d(0,${p*34}px,0)`;
+          if(person)person.style.transform=`translate3d(0,${p*-18}px,0)`;
+        }
+      }
+      ticking=false;
+    });
+  };
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();

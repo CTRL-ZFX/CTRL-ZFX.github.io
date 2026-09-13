@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page-loader" id="pageLoader" aria-hidden="true"><div class="loader-inner"><div class="loader-mark">CTRL-ZFX</div><div class="loader-bar"></div></div></div>
 <div class="grain" aria-hidden="true"></div><div class="cursor-glow" aria-hidden="true"></div>
 <audio id="bgMusic" src="assets/ambient-cinematic-loop.wav" loop preload="auto"></audio><audio id="uiClick" src="assets/ui-click.wav" preload="auto"></audio><audio id="uiSoftClick" src="assets/ui-soft-click.wav" preload="auto"></audio>
 <button class="sound-toggle" id="soundToggle" type="button" aria-label="Turn sound on" aria-pressed="false"><span class="sound-icon">♪</span><span class="sound-text">SOUND OFF</span></button>
@@ -21,20 +22,20 @@
 <main>
 <section class="hero" id="home">
   <div class="hero-bg-wrap" aria-hidden="true">
-    <img src="assets/hero-bg.png" class="hero-bg" alt="">
+    <img src="assets/hero-bg.png" class="hero-bg" alt="" fetchpriority="high">
     <div class="hero-vignette"></div><div class="hero-gold-light"></div><div class="particles p1"></div><div class="particles p2"></div>
     <div class="horizon-line"></div>
   </div>
   <div class="hero-copy">
     <div class="eyebrow">VIDEO EDITOR <b>&</b> MOTION DESIGN</div>
-    <div class="hero-logo-wrap"><img class="hero-logo" src="assets/ctrl-zfx-logo.png" alt="CTRL-ZFX logo"></div>
+    <div class="hero-logo-wrap"><img class="hero-logo" src="assets/ctrl-zfx-logo.png" alt="CTRL-ZFX logo" fetchpriority="high"></div>
     <div class="tagline">TURNING IDEAS INTO VISUAL STORIES</div><div class="gold-line"></div>
     <p class="typewriter-text">Creative video editor, motion designer, and VFX artist based in Kolkata. I craft cinematic visuals that bring your vision to life.</p>
     <a class="button" href="#work">VIEW MY WORK <span>→</span></a>
   </div>
   <div class="hero-person-wrap" aria-hidden="true">
     <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="person-aura"></div>
-    <img src="assets/sayan-cutout.png" class="hero-person" alt="Sayan Manna">
+    <img src="assets/sayan-cutout.png" class="hero-person" alt="Sayan Manna" fetchpriority="high">
     <div class="vfx-echo"><img src="assets/sayan-cutout.png" alt=""></div>
   </div>
   <div class="location"><span>⌖</span><div>KOLKATA, INDIA<br><small>HOWRAH BRIDGE</small></div></div>
