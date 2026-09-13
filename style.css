@@ -127,3 +127,10 @@ html,body{width:100%;min-width:0;}
   .contact-grid h2{font-size:52px;letter-spacing:-3px;}
   footer{padding:25px 5%;}
 }
+
+
+/* Typewriter text reveal */
+.typewriter-text{position:relative;min-height:3.7em;}
+.typewriter-text.is-typing::after{content:"";display:inline-block;width:2px;height:1em;margin-left:4px;background:var(--gold);vertical-align:-.15em;animation:typeCursor .75s steps(1) infinite;}
+@keyframes typeCursor{0%,45%{opacity:1}46%,100%{opacity:0}}
+@media(max-width:560px){.typewriter-text{min-height:5.8em}}

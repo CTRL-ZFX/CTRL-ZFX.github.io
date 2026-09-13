@@ -49,3 +49,23 @@ document.querySelectorAll('.service-card').forEach(card=>{
     if(enabled){const isNav=el.matches('a');const snd=isNav?soft:click;snd.currentTime=0;snd.play().catch(()=>{})}
   }));
 })();
+
+// Typewriter reveal for Home and About copy.
+(() => {
+  const targets=[...document.querySelectorAll('.typewriter-text')];
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  targets.forEach((el,index)=>{
+    const text=el.textContent.trim();
+    if(reduce){ el.textContent=text; return; }
+    el.textContent='';
+    el.classList.add('is-typing');
+    let i=0;
+    const speed=index===0?28:24;
+    const type=()=>{
+      if(i<text.length){ el.textContent+=text.charAt(i++); setTimeout(type,speed); }
+      else el.classList.remove('is-typing');
+    };
+    const delay=index===0?650:250;
+    setTimeout(type,delay);
+  });
+})();
